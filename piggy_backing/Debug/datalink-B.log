@@ -1,0 +1,88 @@
+000.000 =============================================================
+000.000                     Station B                               
+000.000 -------------------------------------------------------------
+000.000 Protocol.lib, version 4.0, jiangyanjun0718@bupt.edu.cn
+000.000 Channel: 8000 bps, 270 ms propagation delay, bit error rate 1.0E-05
+000.000 Log file "datalink-B.log", TCP port 59144, debug mask 0x03
+000.000 Station B is connecting station A (TCP port 59144) ... Done.
+000.376 New epoch: Mon Apr 29 23:28:30 2019
+000.377 =================================================================
+000.378 
+000.379 Designed by Jiang Yanjun, build:Apr 29 2019 23:28:23
+000.381 current frame_expected:0 next_frame_to_send: 0
+000.917 Recv DATA 0 15, ID 10000
+000.919 !!!To network layer successfully ID 10000
+000.922 current frame_expected:1 next_frame_to_send: 0
+001.051 Send DATA 0 0, ID 20000
+001.054 current frame_expected:1 next_frame_to_send: 1
+001.198 Recv DATA 1 15, ID 10001
+001.199 !!!To network layer successfully ID 10001
+001.200 current frame_expected:2 next_frame_to_send: 1
+001.282 current frame_expected:2 next_frame_to_send: 1
+001.284 Send DATA 1 1, ID 20001
+001.289 current frame_expected:2 next_frame_to_send: 2
+001.481 Recv DATA 2 15, ID 10002
+001.483 !!!To network layer successfully ID 10002
+001.485 current frame_expected:3 next_frame_to_send: 2
+001.552 current frame_expected:3 next_frame_to_send: 2
+001.554 Send DATA 2 2, ID 20002
+001.557 current frame_expected:3 next_frame_to_send: 3
+001.724 Recv DATA 3 15, ID 10003
+001.727 !!!To network layer successfully ID 10003
+001.729 current frame_expected:4 next_frame_to_send: 3
+001.812 current frame_expected:4 next_frame_to_send: 3
+001.815 Send DATA 3 3, ID 20003
+001.818 current frame_expected:4 next_frame_to_send: 4
+001.996 Recv DATA 4 15, ID 10004
+001.998 !!!To network layer successfully ID 10004
+002.000 current frame_expected:5 next_frame_to_send: 4
+002.067 current frame_expected:5 next_frame_to_send: 4
+002.069 Send DATA 4 4, ID 20004
+002.072 current frame_expected:5 next_frame_to_send: 5
+002.249 Recv DATA 5 0, ID 10005
+002.252 !!!To network layer successfully ID 10005
+002.255 current frame_expected:6 next_frame_to_send: 5
+002.335 current frame_expected:6 next_frame_to_send: 5
+002.337 Send DATA 5 5, ID 20005
+002.341 current frame_expected:6 next_frame_to_send: 6
+002.594 current frame_expected:6 next_frame_to_send: 6
+002.596 Send DATA 6 5, ID 20006
+002.599 current frame_expected:6 next_frame_to_send: 7
+002.871 current frame_expected:6 next_frame_to_send: 7
+002.873 Send DATA 7 5, ID 20007
+002.877 current frame_expected:6 next_frame_to_send: 8
+003.134 current frame_expected:6 next_frame_to_send: 8
+003.136 Send DATA 8 5, ID 20008
+003.140 current frame_expected:6 next_frame_to_send: 9
+003.394 current frame_expected:6 next_frame_to_send: 9
+003.849 ---- DATA 1 timeout
+003.852 Send DATA 16 5, ID 20008
+003.858 current frame_expected:6 next_frame_to_send: 9
+004.086 current frame_expected:6 next_frame_to_send: 9
+004.102 ---- DATA 2 timeout
+004.103 Send DATA 16 5, ID 20008
+004.106 current frame_expected:6 next_frame_to_send: 9
+004.344 current frame_expected:6 next_frame_to_send: 9
+004.377 ---- DATA 3 timeout
+004.378 Send DATA 16 5, ID 20008
+004.383 current frame_expected:6 next_frame_to_send: 9
+004.607 current frame_expected:6 next_frame_to_send: 9
+004.640 ---- DATA 4 timeout
+004.641 Send DATA 16 5, ID 20008
+004.645 current frame_expected:6 next_frame_to_send: 9
+004.874 current frame_expected:6 next_frame_to_send: 9
+004.907 ---- DATA 5 timeout
+004.909 Send DATA 16 5, ID 20008
+004.921 current frame_expected:6 next_frame_to_send: 9
+005.145 current frame_expected:6 next_frame_to_send: 9
+005.178 ---- DATA 6 timeout
+005.179 Send DATA 16 5, ID 20008
+005.183 current frame_expected:6 next_frame_to_send: 9
+005.408 current frame_expected:6 next_frame_to_send: 9
+005.425 ---- DATA 7 timeout
+005.425 Send DATA 16 5, ID 20008
+005.429 current frame_expected:6 next_frame_to_send: 9
+005.668 current frame_expected:6 next_frame_to_send: 9
+007.961 ---- DATA 0 timeout
+007.962 Send DATA 16 5, ID 20008
+007.96
