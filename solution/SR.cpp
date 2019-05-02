@@ -18,16 +18,16 @@ struct FRAME {
     unsigned int  padding;
 };
 
-static unsigned char buffer[PKT_LEN], nbuffered;
-static unsigned char frame_send_end = 0, frame_send_head = 0;
+static unsigned char buffer[PKT_LEN], nbuffered; // 发送缓冲区 仅一帧
+static unsigned char frame_send_end = 0, frame_send_head = 0; // 标识队列的头尾
 static unsigned char frame_expected = 0, frame_receive_head = 0;
-static int phl_ready = 0;
-static unsigned char frame_send[WINDOW_NUMBER * PKT_LEN];
-static unsigned char frame_receive[WINDOW_NUMBER * PKT_LEN];
-static bool receive_cache[WINDOW_NUMBER] = { false };
+static int phl_ready = 0; // 物理层准备
+static unsigned char frame_send[WINDOW_NUMBER * PKT_LEN]; // 发送的缓冲区
+static unsigned char frame_receive[WINDOW_NUMBER * PKT_LEN]; // 接收的缓冲区
+static bool receive_cache[WINDOW_NUMBER] = { false }; // 标志收集到什么帧
 static bool no_nak = false;
-static bool ack_flag[WINDOW_NUMBER] = { false };
-static unsigned char send_now = 0;
+static bool ack_flag[WINDOW_NUMBER] = { false }; // 标志发送了谁的 ack
+static unsigned char send_now = 0; // 发送帧的序号
 
 static void put_frame(unsigned char *frame, int len) {
     *(unsigned int *)(frame + len) = crc32(frame, len);
@@ -40,20 +40,22 @@ static void send_data_frame(void) {
     struct FRAME s;
     s.kind = FRAME_DATA;
     s.seq = send_now;
-    s.ack = frame_expected == 0 ? WINDOW_NUMBER - 1 : frame_expected - 1;
+    // 通过判断代替 (x + window_number - 1) % window_number
+    s.ack = frame_expected == 0 ? WINDOW_NUMBER - 1 : frame_expected - 1; 
+    // 从发送缓冲区内拷出发送内容
     memcpy(s.data, frame_send + send_now * PKT_LEN, PKT_LEN);
     put_frame((unsigned char *)&s, 3 + PKT_LEN);
+    // 开始当前的数据帧计时器
     start_timer(send_now, DATA_TIMER);
 
     dbg_frame("Send DATA %d %d, ID %d\n", s.seq, s.ack, *(short *)s.data);
+    // 发送序号+1
     send_now = (send_now + 1) % WINDOW_NUMBER;
 }
 
-static void save_data_frame(void) {
+static void save_data_frame(void) { // 先保存数据帧再进行发送
     memcpy(frame_send + frame_send_head * PKT_LEN, buffer, PKT_LEN);
-
     //dbg_frame("Save DATA %d %d, ID %d\n", s.seq, s.ack, *(short *)s.data);
-
     send_data_frame();
     frame_send_head = (frame_send_head + 1) % WINDOW_NUMBER;
 }
@@ -92,25 +94,25 @@ static void send_nak_frame() {
 }
 
 static bool is_bewteen(unsigned char l, unsigned char pos, unsigned char r) {
-    if (r < l) {
+    if (r < l) { // 判断窗口 动态调整判断范围
         r += WINDOW_NUMBER;
     }
     if (pos < l) {
         pos += WINDOW_NUMBER;
     }
-    return l <= pos && pos < r;
+    return l <= pos && pos < r; // 是一个左闭右开区间
 }
 
 static void process_frame(struct FRAME &f, int len) {
     if (f.kind == FRAME_NAK) {
         dbg_frame("Recv NAK  %d\n", f.ack);
         if (is_bewteen(frame_send_end, f.ack, frame_send_head)) {
-            auto send_now_temp = send_now;
-            send_now = f.ack;
+            unsigned char send_now_temp = send_now;
+            send_now = f.ack; // 重新发送对应帧
             send_data_frame();
             send_now = send_now_temp;
         }
-        f.ack = (f.ack + WINDOW_NUMBER - 1) % WINDOW_NUMBER;
+        f.ack = (f.ack + WINDOW_NUMBER - 1) % WINDOW_NUMBER; // 对ack编号+1
     }
     if (f.kind == FRAME_ACK)
         dbg_frame("Recv ACK  %d\n", f.ack);
@@ -119,14 +121,14 @@ static void process_frame(struct FRAME &f, int len) {
         if (f.seq != frame_expected) {
             send_nak_frame();
         }
-        if (is_bewteen(frame_expected, f.seq, frame_expected + SLIDE_WINDOW_SIZE)) {
-            memcpy(&frame_receive[f.seq * PKT_LEN], f.data, PKT_LEN);
+        if (is_bewteen(frame_expected, f.seq, frame_expected + SLIDE_WINDOW_SIZE)) { // 上限固定为 frame_expected + 滑动窗口大小
+            memcpy(&frame_receive[f.seq * PKT_LEN], f.data, PKT_LEN); // 保存在缓冲区
             receive_cache[f.seq] = true;
             no_nak = true;
             ack_flag[f.seq] = true;
         }
-        auto i = f.seq;
-        while (i == frame_expected && receive_cache[i]) {
+        unsigned char i = f.seq;
+        while (i == frame_expected && receive_cache[i]) { // 呈递之前缓存的帧
             //dbg_frame("Use saved frame %d\n", i);
             put_packet(&frame_receive[i * PKT_LEN], PKT_LEN);
             no_nak = false;
@@ -138,7 +140,7 @@ static void process_frame(struct FRAME &f, int len) {
         start_ack_timer(ACK_TIMER);
     }
     while (is_bewteen(frame_send_end, f.ack, frame_send_head + 1)) {
-        dbg_frame("AC   ACK %d\n", frame_send_end);
+        dbg_frame("AC   ACK %d\n", frame_send_end); // 通过ack记录移动接收区间
         stop_timer(frame_send_end);
         --nbuffered;
         frame_send_end = (frame_send_end + 1) % WINDOW_NUMBER;
@@ -157,7 +159,7 @@ int main(int argc, char **argv) {
 
     for (;;) {
         event = wait_for_event(&arg);
-        auto send_now_temp = send_now;
+        unsigned char send_now_temp = send_now;
 
         switch (event) {
             case NETWORK_LAYER_READY:
@@ -184,7 +186,7 @@ int main(int argc, char **argv) {
                 dbg_event("---- DATA %d timeout\n", arg);
                 send_now = arg;
                 send_data_frame();
-                send_now = send_now_temp;
+                send_now = send_now_temp; // 在发送一个帧后恢复之前的帧序号
                 break;
 
             case ACK_TIMEOUT:

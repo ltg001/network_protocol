@@ -8,7 +8,7 @@
 
 #define DATA_TIMER 2000
 #define WINDOW_NUMBER 8
-#define SLIDE_WINDOW_SIZE 2
+#define SLIDE_WINDOW_SIZE 2 
 #define WITH_ACK true
 
 struct FRAME
