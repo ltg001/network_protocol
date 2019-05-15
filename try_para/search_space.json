@@ -1,0 +1,8 @@
+{
+    "data_timer_a":{"_type": "uniform", "_value": [1000, 3000]},
+    "ack_timer_a":{"_type": "uniform", "_value":[1000, 3000]},
+    "window_number_a":{"_type":"uniform", "_value":[16, 64]},
+    "data_timer_b":{"_type": "uniform", "_value": [1000, 3000]},
+    "ack_timer_b":{"_type": "uniform", "_value": [1000, 3000]},
+    "window_number_b":{"_type":"uniform", "_value":[16, 64]}
+}

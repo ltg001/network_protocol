@@ -1,0 +1,112 @@
+000.000 =============================================================
+000.000                     Station A                               
+000.000 -------------------------------------------------------------
+000.000 Protocol.lib, version 4.0, jiangyanjun0718@bupt.edu.cn
+000.000 Channel: 8000 bps, 270 ms propagation delay, bit error rate 1.0E-05
+000.000 Log file "datalink-A.log", TCP port 59144, debug mask 0x03
+000.000 Station A is waiting for station B on TCP port 59144 ... Done.
+000.854 New epoch: Mon Apr 29 22:51:48 2019
+000.857 =================================================================
+000.862 
+000.870 Designed by Secone, build: Apr 29 2019  22:33:48
+000.870 current DATA_TIMER, ACK_TIMER, WINDOW_NUMBER = 3100, 1150, 32Send DATA 0 31, ID 10000
+001.123 Send DATA 1 31, ID 10001
+001.376 Send DATA 2 31, ID 10002
+001.585 Recv DATA 0 31, ID 20000. Expect: 0
+001.652 Send DATA 3 0, ID 10003
+001.843 **** Receiver Error, Bad CRC Checksum.
+001.843 Send NAK  1
+001.924 Send DATA 4 0, ID 10004
+002.114 Recv DATA 2 0, ID 20002. Expect: 1
+002.117 AC   ACK 0
+002.182 Send DATA 5 0, ID 10005
+002.388 Recv DATA 3 1, ID 20003. Expect: 1
+002.390 AC   ACK 1
+002.439 Send DATA 6 0, ID 10006
+002.642 Recv DATA 4 2, ID 20004. Expect: 1
+002.644 AC   ACK 2
+002.707 Send DATA 7 0, ID 10007
+002.898 Recv DATA 1 3, ID 20001. Expect: 1
+002.901 AC   ACK 3
+002.969 Send DATA 8 4, ID 10008
+003.175 Recv DATA 5 4, ID 20005. Expect: 5
+003.177 AC   ACK 4
+003.242 Send DATA 9 5, ID 10009
+003.417 Recv DATA 6 5, ID 20006. Expect: 6
+003.419 .... 7 packets received, 6810 bps, 85.13%, Err 1 (5.3e-05)
+003.422 [to log] 0.8513
+003.422 AC   ACK 5
+003.502 Send DATA 10 6, ID 10010
+003.693 Recv DATA 7 6, ID 20007. Expect: 7
+003.695 AC   ACK 6
+003.760 Send DATA 11 7, ID 10011
+003.953 Recv DATA 8 7, ID 20008. Expect: 8
+003.955 AC   ACK 7
+004.036 Send DATA 12 8, ID 10012
+004.208 Recv DATA 9 8, ID 20009. Expect: 9
+004.209 AC   ACK 8
+004.289 Send DATA 13 9, ID 10013
+004.480 Recv DATA 10 9, ID 20010. Expect: 10
+004.481 AC   ACK 9
+004.562 Send DATA 14 10, ID 10014
+004.753 Recv DATA 11 10, ID 20011. Expect: 11
+004.754 AC   ACK 10
+004.820 Send DATA 15 11, ID 10015
+005.029 Recv DATA 12 11, ID 20012. Expect: 12
+005.031 AC   ACK 11
+005.080 Send DATA 16 12, ID 10016
+005.287 Recv DATA 13 12, ID 20013. Expect: 13
+005.289 AC   ACK 12
+005.354 Send DATA 17 13, ID 10017
+005.543 Recv DATA 14 13, ID 20014. Expect: 14
+005.545 .... 15 packets received, 7261 bps, 90.76%, Err 1 (2.8e-05)
+005.547 [to log] 0.9076
+005.547 AC   ACK 13
+005.610 Send DATA 18 14, ID 10018
+005.801 Recv DATA 15 14, ID 20015. Expect: 15
+005.803 AC   ACK 14
+005.883 Send DATA 19 15, ID 10019
+006.060 Recv DATA 16 15, ID 20016. Expect: 16
+006.061 AC   ACK 15
+006.142 Send DATA 20 16, ID 10020
+006.336 Recv DATA 17 16, ID 20017. Expect: 17
+006.337 AC   ACK 16
+006.401 Send DATA 21 17, ID 10021
+006.592 Recv DATA 18 17, ID 20018. Expect: 18
+006.595 AC   ACK 17
+006.677 Send DATA 22 18, ID 10022
+006.868 Recv DATA 19 18, ID 20019. Expect: 19
+006.869 AC   ACK 18
+006.933 Send DATA 23 19, ID 10023
+007.125 Recv DATA 20 19, ID 20020. Expect: 20
+007.126 AC   ACK 19
+007.191 Send DATA 24 20, ID 10024
+007.397 Recv DATA 21 20, ID 20021. Expect: 21
+007.399 AC   ACK 20
+007.463 Send DATA 25 21, ID 10025
+007.653 Recv DATA 22 21, ID 20022. Expect: 22
+007.655 .... 23 packets received, 7428 bps, 92.86%, Err 1 (1.9e-05)
+007.656 [to log] 0.9286
+007.656 AC   ACK 21
+007.720 Send DATA 26 22, ID 10026
+007.928 Recv DATA 23 22, ID 20023. Expect: 23
+007.930 AC   ACK 22
+007.996 Send DATA 27 23, ID 10027
+008.186 Recv DATA 24 23, ID 20024. Expect: 24
+008.187 AC   ACK 23
+008.250 Send DATA 28 24, ID 10028
+008.443 Recv DATA 25 24, ID 20025. Expect: 25
+008.444 AC   ACK 24
+008.524 Send DATA 29 25, ID 10029
+008.716 Recv DATA 26 25, ID 20026. Expect: 26
+008.717 AC   ACK 25
+008.781 Send DATA 30 26, ID 10030
+008.970 Recv DATA 27 26, ID 20027. Expect: 27
+008.972 AC   ACK 26
+009.051 Send DATA 31 27, ID 10031
+009.227 Recv DATA 28 27, ID 20028. Expect: 28
+009.230 AC   ACK 27
+009.311 Send DATA 0 28, ID 10032
+009.502 Recv DATA 29 28, ID 20029. Expect: 29
+009.504 AC   ACK 28
+009

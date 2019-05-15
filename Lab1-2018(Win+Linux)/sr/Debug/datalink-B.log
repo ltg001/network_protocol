@@ -1,0 +1,95 @@
+000.000 =============================================================
+000.000                     Station B                               
+000.000 -------------------------------------------------------------
+000.000 Protocol.lib, version 4.0, jiangyanjun0718@bupt.edu.cn
+000.000 Channel: 8000 bps, 270 ms propagation delay, bit error rate 1.0E-05
+000.000 Log file "datalink-B.log", TCP port 59144, debug mask 0x03
+000.000 Station B is connecting station A (TCP port 59144) ... Failed!
+000.000 Station B is connecting station A (TCP port 59144) ... Done.
+000.425 New epoch: Sat Apr 27 14:39:54 2019
+000.426 =================================================================
+000.428 
+000.429 Designed by Jiang Yanjun, build:Apr 27 2019 14:39:48
+000.430 current frame_expected:0 next_frame_to_send: 0
+000.988 Recv DATA 0 15, ID 10000
+000.989 !!!To network layer successfully ID 10000
+000.990 current frame_expected:1 next_frame_to_send: 0
+001.006 Recv DATA 208 15, ID -32063
+001.007 Send NAK  0
+001.008 current frame_expected:1 next_frame_to_send: 0
+001.008 current frame_expected:1 next_frame_to_send: 0
+001.039 Send DATA 0 0, ID 20000
+001.041 Send NAK  0
+001.041 current frame_expected:1 next_frame_to_send: 1
+001.265 Recv DATA 1 15, ID 10001
+001.266 current frame_expected:1 next_frame_to_send: 1
+001.282 Recv DATA 208 15, ID -32063
+001.283 current frame_expected:1 next_frame_to_send: 1
+001.284 current frame_expected:1 next_frame_to_send: 1
+001.285 Send DATA 1 0, ID 20001
+001.285 Send NAK  0
+001.286 current frame_expected:1 next_frame_to_send: 2
+001.509 Recv DATA 2 15, ID 10002
+001.510 current frame_expected:1 next_frame_to_send: 2
+001.527 Recv DATA 208 15, ID -32063
+001.528 current frame_expected:1 next_frame_to_send: 2
+001.544 current frame_expected:1 next_frame_to_send: 2
+001.546 Send DATA 2 0, ID 20002
+001.552 Send NAK  0
+001.554 current frame_expected:1 next_frame_to_send: 3
+001.775 Recv DATA 3 15, ID 10003
+001.776 current frame_expected:1 next_frame_to_send: 3
+001.793 Recv DATA 208 15, ID -32063
+001.794 current frame_expected:1 next_frame_to_send: 3
+001.828 current frame_expected:1 next_frame_to_send: 3
+001.829 Send DATA 3 0, ID 20003
+001.830 Send NAK  0
+001.830 current frame_expected:1 next_frame_to_send: 4
+002.071 Recv DATA 1 15, ID 10001
+002.071 current frame_expected:1 next_frame_to_send: 4
+002.072 Recv DATA 208 15, ID -32063
+002.073 current frame_expected:1 next_frame_to_send: 4
+002.089 response NAK to 1Send DATA 1 0, ID 20003
+002.091 Send NAK  0
+002.092 current frame_expected:1 next_frame_to_send: 4
+002.347 Recv DATA 4 0, ID 10004
+002.348 current frame_expected:1 next_frame_to_send: 4
+002.364 Recv DATA 65 0, ID 15836
+002.365 current frame_expected:1 next_frame_to_send: 4
+002.367 current frame_expected:1 next_frame_to_send: 4
+002.368 Send DATA 4 0, ID 20004
+002.369 Send NAK  0
+002.369 current frame_expected:1 next_frame_to_send: 5
+002.591 Recv DATA 5 0, ID 10005
+002.592 current frame_expected:1 next_frame_to_send: 5
+002.609 Recv DATA 65 0, ID 15836
+002.610 current frame_expected:1 next_frame_to_send: 5
+002.629 current frame_expected:1 next_frame_to_send: 5
+002.629 Send DATA 5 0, ID 20005
+002.630 Send NAK  0
+002.631 current frame_expected:1 next_frame_to_send: 6
+002.885 Recv DATA 6 0, ID 10006
+002.886 current frame_expected:1 next_frame_to_send: 6
+002.902 Recv DATA 65 0, ID 15836
+002.904 current frame_expected:1 next_frame_to_send: 6
+002.905 current frame_expected:1 next_frame_to_send: 6
+002.906 Send DATA 6 0, ID 20006
+002.907 Send NAK  0
+002.907 current frame_expected:1 next_frame_to_send: 7
+003.162 Recv DATA 7 0, ID 10007
+003.164 current frame_expected:1 next_frame_to_send: 7
+003.166 Recv DATA 65 0, ID 15836
+003.167 current frame_expected:1 next_frame_to_send: 7
+003.168 current frame_expected:1 next_frame_to_send: 7
+003.168 Send DATA 7 0, ID 20007
+003.169 Send NAK  0
+003.169 current frame_expected:1 next_frame_to_send: 8
+003.440 Recv DATA 8 0, ID 10008
+003.441 current frame_expected:1 next_frame_to_send: 8
+003.442 current frame_expected:1 next_frame_to_send: 8
+003.442 Send DATA 8 0, ID 20008
+003.443 Send NAK  0
+003.443 current frame_expected:1 next_frame_to_send: 9
+003.460 Recv DATA 65 0, ID 15836
+003.461 current frame_expected:1 next_frame_to_send: 9
+003.621 TCP Disconnected.
